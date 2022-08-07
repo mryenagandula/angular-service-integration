@@ -1,0 +1,10 @@
+<div style="margin: 25px;">
+  <ng-container *ngIf="pokemans && pokemans.length>0">
+    <h3>List of Pokemans</h3>
+    <ol style="height: 400px;overflow-y:auto;">
+      <li *ngFor="let pokeman of pokemans" style="text-decoration: none;padding: 5px;">
+        {{pokeman.name}}
+      </li>
+    </ol>
+  </ng-container>
+</div>
