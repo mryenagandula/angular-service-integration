@@ -13,11 +13,15 @@ export class AppComponent implements OnInit{
   constructor(private api: PokemanService){}
 
   ngOnInit(): void {
-      this.api.getAllPokemans().subscribe((res:any)=>{
-        console.log(res.results)
-        this.pokemans =res.results;
-      },error=>{
-        console.log(error)
-      })
+    this.getAllPokemans();
+  }
+  
+  getAllPokemans(){
+    this.api.getAllPokemans().subscribe((res:any)=>{
+      console.log(res.results)
+      this.pokemans =res.results;
+    },error=>{
+      console.log(error)
+    })
   }
 }
